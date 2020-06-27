@@ -1,0 +1,63 @@
+﻿#include"List.h"
+#include"StackList.h"
+int main(){
+	cout << "Singly linked list:\nCreate list:\nAdd to head:\n";
+	List<int>l1;
+	l1.AddToHead(12);
+	l1.Print();
+	l1.AddToHead(17);
+	l1.Print();
+	cout << "\nAdd to tail:\n";
+	l1.AddToTail(77);
+	l1.Print();
+	l1.AddToTail(55);
+	l1.Print();
+	cout << "\nAdd to position:\n";
+	l1.AddToPos(1, 100);
+	l1.Print();
+	l1.AddToPos(5, -10);
+	l1.Print();
+	cout << "\nDelete from position:\n";
+	l1.DelteFromPos(l1.GetCount()-1);
+	l1.Print();
+	l1.DelteFromPos(2);
+	l1.Print();
+	cout << "\nDelete from tail:\n";
+	l1.DeleteTail();
+	l1.Print();
+	cout << "\nDelete from head:\n";
+	l1.DeleteHead();
+	l1.Print();
+	cout << "\nFind by possition:\n";
+	cout<<l1.Find(2)<<endl;
+
+	system("pause");
+	system("cls");
+	cout << "Stack:\nCreate and fill first stack:\n";
+	StackList<int>sl1,sl2;
+	sl1.Push(12);
+	sl1.Print();
+	sl1.Push(22);
+	sl1.Print();
+	sl1.Push(17);
+	sl1.Print();
+	sl1.Push(11);
+	sl1.Print();
+	cout << "Second stack = first stack.\n";
+	sl2 = sl1;
+	cout << "Remove elements:\n";
+	cout << sl1.Pop()<<endl;
+	cout << sl1.Pop() << endl;
+	cout << "First stack:\n";
+	sl1.Print();
+	cout << "Clear first stack:\n";
+	sl1.Clear();
+	cout << "Elements in first stack: "<<sl1.GetCount() << endl;
+	cout << "Second stack:\n";
+	sl2.Print();
+	cout << "Add elemetn in second stack:\n";
+	sl2.Push(55);
+	sl2.Print();
+	cout <<"Last added in second stack: "<< sl2.Peek() << endl;
+	return 0;
+}
